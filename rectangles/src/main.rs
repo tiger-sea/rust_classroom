@@ -1,8 +1,17 @@
-fn main() {
-    let rec = (10, 5);
-    println!("The area of the rectangle is {}", area(rec));
+struct Rectangle {
+    width: u32,
+    height: u32
 }
 
-fn area(dementions: (u32, u32)) -> u32 {
-    dementions.0 * dementions.1
+fn main() {
+    let rec = Rectangle {
+        width: 10,
+        height: 5
+    };
+    // 引数は参照で渡す,所有権を渡したくないから.
+    println!("The area of the rectangle is {}", area(&rec));
+}
+
+fn area(dementions: &Rectangle) -> u32 {
+    dementions.height * dementions.width
 }
