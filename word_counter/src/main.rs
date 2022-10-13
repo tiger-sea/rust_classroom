@@ -1,5 +1,6 @@
 use std::{io, collections::HashMap};
-
+#[allow(unused)]
+use proconio::input;
 fn main() {
     let text = get_string();
     let mut counter_map: HashMap<String, u32> = HashMap::new(); // keyがStringだからword.to_string()しなきゃいけない
